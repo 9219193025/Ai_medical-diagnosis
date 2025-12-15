@@ -23,3 +23,16 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+# ML models
+model/*.pkl
+model/*.joblib
+
+# virtual env
+.venv/
+
+# python cache
+__pycache__/
+*.pyc
+
+# database
+app.db
