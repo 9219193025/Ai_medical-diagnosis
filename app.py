@@ -1,4 +1,4 @@
-import os, json, pickle
+import os, json, pickle,requests
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session, send_from_directory
 from flask_cors import CORS
 import numpy as np
@@ -8,6 +8,7 @@ from sqlalchemy.orm import scoped_session
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from datetime import datetime
+
 
 # -------------------------
 #   Database session
@@ -30,11 +31,35 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_DIR = os.path.join(BASE_DIR, "model")
 REPORT_DIR = os.path.join(BASE_DIR, "reports")
 os.makedirs(REPORT_DIR, exist_ok=True)
+os.makedirs(MODEL_DIR, exist_ok=True)
+
+
 
 # -------------------------
 #   Load ML Artifacts
-# -------------------------
-model = pickle.load(open(os.path.join(MODEL_DIR, "model.pkl"), "rb"))
+MODEL_URL = "https://huggingface.co/Kartikey27/ai-medical-diagnosis-model/resolve/main/model.pkl"
+MODEL_PATH = os.path.join(MODEL_DIR, "model.pkl")
+
+model = None
+
+def load_model():
+    global model
+    if model is None:
+        if not os.path.exists(MODEL_PATH):
+            print("⬇ Downloading model from Hugging Face...")
+            with requests.get(MODEL_URL, stream=True) as r:
+                r.raise_for_status()
+                with open(MODEL_PATH, "wb") as f:
+                    for chunk in r.iter_content(chunk_size=8192):
+                        if chunk:
+                            f.write(chunk)
+
+        print("✅ Loading model into memory...")
+        with open(MODEL_PATH, "rb") as f:
+            model = pickle.load(f)
+
+    return model 
+
 symptom_columns = json.load(open(os.path.join(MODEL_DIR, "symptom_columns.json"), "r"))
 medical_data = json.load(open(os.path.join(MODEL_DIR, "medical_data.json"), "r"))
 disease_map = json.load(open(os.path.join(MODEL_DIR, "disease_mapping.json"), "r"))
@@ -118,6 +143,7 @@ def login_user():
 def predict():
     if "user_id" not in session:
         return jsonify({"error": "login required"}), 401
+    model = load_model()
 
     data = request.json
     symptoms = data["symptoms"]
@@ -157,7 +183,7 @@ def predict():
 
 # -------------------------
 #   PDF Download
-# @app.route("/generate_pdf", methods=["POST"])
+@app.route("/generate_pdf", methods=["POST"])
 def generate_pdf():
     try:
         data = request.json
@@ -213,5 +239,10 @@ def download_file(filename):
 # -------------------------
 #   Run App
 # -------------------------
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db_session.remove()
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
+
