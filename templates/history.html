@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History | AI Diagnosis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <h2>Diagnosis History</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Your Past Diagnoses</h1>
+
+    {% if records %}
+        <table>
+            <tr>
+                <th>Disease</th>
+                <th>Symptoms</th>
+                <th>Date</th>
+            </tr>
+
+            {% for r in records %}
+            <tr>
+                <td>{{ r.disease }}</td>
+                <td>{{ r.symptoms }}</td>
+                <td>{{ r.timestamp.strftime("%d-%m-%Y %H:%M") }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    {% else %}
+        <p>No records yet.</p>
+    {% endif %}
+</div>
+
+</body>
+</html>

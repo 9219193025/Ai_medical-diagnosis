@@ -1,0 +1,371 @@
+{
+  "Fungal infection": [
+    "Use antifungal creams or powders as prescribed",
+    "Keep affected area completely dry",
+    "Wear clean and breathable cotton clothing",
+    "Avoid scratching to prevent spreading",
+    "Maintain proper hygiene",
+    "Disinfect towels and bedding regularly",
+    "Avoid sharing personal items"
+  ],
+  "Allergy": [
+    "Avoid known allergens strictly",
+    "Use antihistamines if symptoms appear",
+    "Wear mask in dusty environments",
+    "Use clean bedding and dust-free items",
+    "Keep surroundings ventilated",
+    "Shower after outdoor exposure",
+    "Consult a doctor if swelling occurs"
+  ],
+  "GERD": [
+    "Avoid spicy and fatty foods",
+    "Do not lie down immediately after meals",
+    "Eat smaller and more frequent meals",
+    "Elevate the head while sleeping",
+    "Reduce caffeine and carbonated drinks",
+    "Maintain a healthy weight",
+    "Avoid smoking and alcohol"
+  ],
+  "Chronic cholestasis": [
+    "Avoid alcohol completely",
+    "Follow a low-fat diet",
+    "Take bile acid supplements as prescribed",
+    "Get regular liver checkups",
+    "Avoid unnecessary medications",
+    "Increase fluid intake",
+    "Consult a hepatologist for persistent symptoms"
+  ],
+  "Drug Reaction": [
+    "Stop taking the medication immediately",
+    "Inform your doctor as soon as possible",
+    "Drink plenty of water",
+    "Avoid self-medication completely",
+    "Monitor for worsening symptoms",
+    "Apply soothing lotion for rashes",
+    "Carry medical ID if drug allergies exist"
+  ],
+  "Peptic ulcer disease": [
+    "Avoid spicy and acidic foods",
+    "Do not take painkillers like ibuprofen without advice",
+    "Eat on time and avoid skipping meals",
+    "Reduce stress through relaxation techniques",
+    "Avoid smoking and alcohol",
+    "Take antacids or PPIs as prescribed",
+    "Limit caffeine intake"
+  ],
+  "AIDS": [
+    "Take antiretroviral therapy regularly",
+    "Avoid exposure to infections",
+    "Maintain hygiene to reduce opportunistic infections",
+    "Eat a balanced nutritious diet",
+    "Avoid alcohol and smoking",
+    "Get regular CD4 count monitoring",
+    "Practice safe sex always"
+  ],
+  "Diabetes": [
+    "Monitor blood sugar regularly",
+    "Avoid sugary foods and drinks",
+    "Exercise daily at least 30 minutes",
+    "Eat fiber-rich balanced meals",
+    "Stay hydrated",
+    "Avoid stress as it spikes sugar levels",
+    "Take insulin or medication as prescribed"
+  ],
+  "Gastroenteritis": [
+    "Stay hydrated with ORS or electrolyte drinks",
+    "Avoid solid foods initially",
+    "Eat soft, bland foods when recovering",
+    "Maintain hand hygiene",
+    "Avoid oily and spicy foods",
+    "Rest adequately",
+    "Seek doctor help if vomiting persists"
+  ],
+  "Bronchial Asthma": [
+    "Avoid dust, smoke, and strong scents",
+    "Carry inhaler at all times",
+    "Practice breathing exercises",
+    "Use air purifier in polluted areas",
+    "Stay away from cold air if sensitive",
+    "Avoid strenuous exertion during attacks",
+    "Regularly consult a pulmonologist"
+  ],
+  "Hypertension": [
+    "Reduce salt intake to minimum",
+    "Exercise regularly like walking",
+    "Avoid stress and anxiety",
+    "Limit caffeinated drinks",
+    "Take prescribed BP medications daily",
+    "Avoid alcohol and smoking",
+    "Monitor BP weekly"
+  ],
+  "Migraine": [
+    "Avoid bright light and loud noise",
+    "Rest in a dark silent room",
+    "Stay hydrated",
+    "Avoid trigger foods like chocolate and cheese",
+    "Maintain regular sleep schedule",
+    "Use cold compress on head",
+    "Take prescribed migraine medication"
+  ],
+  "Cervical spondylosis": [
+    "Use heating pad or warm compress",
+    "Do gentle neck exercises daily",
+    "Maintain good posture",
+    "Avoid heavy lifting",
+    "Use a supportive pillow",
+    "Take pain relievers if needed",
+    "Consult physiotherapist regularly"
+  ],
+  "Paralysis (brain hemorrhage)": [
+    "Seek emergency medical attention immediately",
+    "Provide supportive care and stabilization",
+    "Follow physiotherapy exercises daily",
+    "Prevent bedsores and keep skin clean",
+    "Avoid smoking and alcohol",
+    "Provide emotional support",
+    "Ensure regular neurologist follow-ups"
+  ],
+  "Jaundice": [
+    "Drink plenty of water and coconut water",
+    "Avoid oily and fatty foods",
+    "Take liver-protective diet like fruits and greens",
+    "Avoid alcohol completely",
+    "Take medications as prescribed",
+    "Rest adequately",
+    "Monitor bilirubin levels regularly"
+  ],
+  "Malaria": [
+    "Sleep under mosquito nets",
+    "Use mosquito repellents regularly",
+    "Avoid mosquito-prone areas",
+    "Stay hydrated",
+    "Take antimalarial medication as prescribed",
+    "Wear long sleeves outdoors",
+    "Rest adequately during fever"
+  ],
+  "Chicken pox": [
+    "Avoid scratching blisters",
+    "Use calamine lotion for soothing",
+    "Take oatmeal baths",
+    "Stay isolated to avoid spreading",
+    "Wear loose cotton clothes",
+    "Keep skin dry and clean",
+    "Take antiviral medication if prescribed"
+  ],
+  "Dengue": [
+    "Drink ORS and fluids frequently",
+    "Avoid painkillers like ibuprofen",
+    "Monitor platelet count regularly",
+    "Use mosquito nets and repellents",
+    "Take complete rest",
+    "Eat papaya leaf extract if advised",
+    "Seek hospital care if bleeding occurs"
+  ],
+  "Typhoid": [
+    "Eat soft, easy-to-digest foods",
+    "Avoid spicy and oily foods",
+    "Complete full antibiotic course",
+    "Drink boiled or filtered water",
+    "Maintain hygiene strictly",
+    "Rest as much as possible",
+    "Avoid outside street food"
+  ],
+  "Hepatitis A": [
+    "Avoid alcohol completely",
+    "Drink plenty of clean water",
+    "Eat soft, easily digestible foods",
+    "Maintain hygiene",
+    "Avoid fatty and fried foods",
+    "Take medications as advised",
+    "Rest adequately"
+  ],
+  "Hepatitis B": [
+    "Avoid alcohol",
+    "Get full HBV treatment course",
+    "Avoid sharing razors or needles",
+    "Maintain hygiene",
+    "Eat liver-friendly foods",
+    "Get regular liver function tests",
+    "Practice safe sex"
+  ],
+  "Hepatitis C": [
+    "Avoid alcohol completely",
+    "Follow antiviral therapy strictly",
+    "Eat protein-rich foods",
+    "Stay hydrated",
+    "Do not share personal items",
+    "Regular liver checkups",
+    "Avoid processed foods"
+  ],
+  "Hepatitis D": [
+    "Strictly avoid alcohol",
+    "Follow medical treatment carefully",
+    "Maintain hygiene",
+    "Eat fresh home-cooked food",
+    "Drink plenty of water",
+    "Avoid self-medication",
+    "Regularly monitor liver function"
+  ],
+  "Hepatitis E": [
+    "Drink clean boiled water",
+    "Avoid raw and street foods",
+    "Avoid alcohol completely",
+    "Take rest until recovery",
+    "Eat light nutritious meals",
+    "Practice hygiene",
+    "Follow doctor advice"
+  ],
+  "Alcoholic hepatitis": [
+    "Quit alcohol immediately",
+    "Follow strict liver diet",
+    "Stay hydrated",
+    "Avoid fatty foods",
+    "Get regular liver monitoring",
+    "Avoid self-medication",
+    "Follow hepatologist advice"
+  ],
+  "Tuberculosis": [
+    "Take full TB medication course",
+    "Cover mouth when coughing",
+    "Avoid crowded places",
+    "Improve ventilation at home",
+    "Eat high-protein diet",
+    "Avoid smoking",
+    "Follow up with doctor regularly"
+  ],
+  "Common Cold": [
+    "Drink warm water",
+    "Use steam inhalation",
+    "Avoid cold drinks and AC",
+    "Take rest",
+    "Use warm salt-water gargles",
+    "Eat vitamin C rich foods",
+    "Stay warm"
+  ],
+  "Pneumonia": [
+    "Take antibiotics as prescribed",
+    "Get rest",
+    "Drink lots of fluids",
+    "Use steam inhalation",
+    "Avoid cold exposure",
+    "Take warm soups",
+    "Monitor fever regularly"
+  ],
+  "Dimorphic hemmorhoids(piles)": [
+    "Eat high-fiber foods",
+    "Drink plenty of water",
+    "Avoid straining during toilet",
+    "Use warm sitz bath",
+    "Avoid spicy foods",
+    "Exercise lightly",
+    "Maintain hygiene"
+  ],
+  "Heart attack": [
+    "Call ambulance immediately",
+    "Chew aspirin if not allergic",
+    "Stay calm and reduce movement",
+    "Avoid exertion",
+    "Follow doctor's emergency protocol",
+    "Take prescribed heart medications",
+    "Avoid smoking"
+  ],
+  "Varicose veins": [
+    "Avoid standing for long periods",
+    "Use compression stockings",
+    "Elevate legs while resting",
+    "Exercise lightly",
+    "Maintain healthy weight",
+    "Avoid tight clothing",
+    "Improve blood circulation"
+  ],
+  "Hypothyroidism": [
+    "Take thyroid medication daily",
+    "Avoid skipping doses",
+    "Eat iodine-rich foods",
+    "Exercise regularly",
+    "Avoid high-sodium foods",
+    "Manage stress",
+    "Regular thyroid checkups"
+  ],
+  "Hyperthyroidism": [
+    "Avoid caffeine",
+    "Take antithyroid medicines",
+    "Reduce stress levels",
+    "Get enough sleep",
+    "Avoid spicy foods",
+    "Monitor thyroid levels",
+    "Avoid smoking"
+  ],
+  "Hypoglycemia": [
+    "Carry sugary snacks",
+    "Do not skip meals",
+    "Avoid heavy exercise without food",
+    "Check glucose levels regularly",
+    "Inform family about condition",
+    "Eat balanced meals",
+    "Seek help if dizziness occurs"
+  ],
+  "Osteoarthristis": [
+    "Do gentle joint exercises",
+    "Use warm compress",
+    "Maintain healthy weight",
+    "Avoid heavy lifting",
+    "Use supportive footwear",
+    "Apply pain relief gels",
+    "Consult physiotherapist"
+  ],
+  "Arthritis": [
+    "Do stretching exercises",
+    "Apply warm or cold packs",
+    "Maintain healthy weight",
+    "Avoid repetitive strain",
+    "Eat anti-inflammatory foods",
+    "Take prescribed medication",
+    "Rest during flare-ups"
+  ],
+  "(vertigo) Paroymsal Positional Vertigo": [
+    "Avoid sudden head movements",
+    "Perform Epley maneuver exercises",
+    "Use support while standing",
+    "Stay hydrated",
+    "Avoid driving during dizziness",
+    "Get adequate rest",
+    "Consult ENT specialist"
+  ],
+  "Acne": [
+    "Wash face twice daily",
+    "Avoid oily and fried foods",
+    "Do not squeeze pimples",
+    "Use non-comedogenic products",
+    "Maintain hygiene",
+    "Drink lots of water",
+    "Use prescribed acne creams"
+  ],
+  "Urinary tract infection": [
+    "Drink plenty of water",
+    "Avoid holding urine",
+    "Wipe front to back",
+    "Avoid caffeine and soda",
+    "Take antibiotics as prescribed",
+    "Maintain hygiene",
+    "Wear cotton underwear"
+  ],
+  "Psoriasis": [
+    "Moisturize skin regularly",
+    "Avoid skin injuries",
+    "Avoid smoking and alcohol",
+    "Take sunlight exposure moderately",
+    "Use medicated creams",
+    "Reduce stress",
+    "Keep skin hydrated"
+  ],
+  "Impetigo": [
+    "Use prescribed antibacterial ointments",
+    "Maintain hygiene",
+    "Avoid touching sores",
+    "Wash clothes and bedding regularly",
+    "Keep affected area covered",
+    "Avoid close contact with others",
+    "Trim nails to prevent scratching"
+  ]
+}
