@@ -4,7 +4,6 @@
     <title>Login | AI Diagnosis</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
 
 <div class="auth-container">
@@ -13,7 +12,6 @@
     <form id="loginForm">
         <input type="email" name="email" placeholder="Enter Email" required>
         <input type="password" name="password" placeholder="Enter Password" required>
-
         <button type="submit">Login</button>
     </form>
 
@@ -21,16 +19,11 @@
 </div>
 
 <script>
-document.getElementById("loginForm").addEventListener("submit", async function (e) {
-    e.preventDefault(); // ⛔ stop normal submit
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    const formData = new FormData(this);
-
-    const res = await fetch("/login_user", {
-        method: "POST",
-        body: formData
-    });
-
+    const formData = new FormData(e.target);
+    const res = await fetch("/login_user", { method: "POST", body: formData });
     const data = await res.json();
 
     if (data.error) {
@@ -38,10 +31,7 @@ document.getElementById("loginForm").addEventListener("submit", async function (
         return;
     }
 
-    // 🔑 STEP 2 — STORE TOKEN
     localStorage.setItem("token", data.token);
-
-    //  redirect after successful login
     window.location.href = "/";
 });
 </script>
