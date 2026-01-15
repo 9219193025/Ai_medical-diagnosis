@@ -144,7 +144,11 @@
 
 <body>
 
+    <div style="position:absolute; top:20px; right:30px; display:flex; gap:15px;">
+    <a class="logout-btn" href="/history">History</a>
     <a class="logout-btn" href="/logout">Logout</a>
+</div>
+
 
     <div class="container">
         <h1> AI Medical Diagnosis</h1>
@@ -166,9 +170,10 @@
 
         <div id="result"></div>
 
-        <button id="pdfBtn" onclick="savePDF(lastResult)" style="display:none;">
-            📄 Download  PDF Report
-        </button>
+        <button id="pdfBtn" onclick="savePDF()" style="display:none;">
+            Download PDF Report
+</button>
+
     </div>
 
     <script>
@@ -191,7 +196,8 @@
             });
 
             const data = await res.json();
-            lastResult = data;
+            window.latestResult = data;
+
 
             document.getElementById("loading").style.display = "none";
 
@@ -230,21 +236,27 @@
             document.getElementById("pdfBtn").style.display = "inline-block";
         });
 
-        async function savePDF(result) {
-            const res = await fetch("/generate_pdf", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(result)
-            });
+        async function savePDF() {
+  if (!window.latestResult) {
+    alert("No diagnosis to export");
+    return;
+  }
 
-            const data = await res.json();
+  const res = await fetch("/generate_pdf", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(window.latestResult)
+  });
 
-            if (data.file) {
-                window.location.href = `/download/${data.file}`;
-            } else {
-                alert(" PDF generation failed");
-            }
-        }
+  const data = await res.json();
+
+  if (data.file) {
+    window.location.href = `/download/${data.file}`;
+  } else {
+    alert("PDF generation failed");
+  }
+}
+
     </script>
 
 </body>

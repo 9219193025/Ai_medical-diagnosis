@@ -54,7 +54,7 @@ def load_model():
                         if chunk:
                             f.write(chunk)
 
-        print("✅ Loading model into memory...")
+        print(" Loading model into memory...")
         with open(MODEL_PATH, "rb") as f:
             model = pickle.load(f)
 
@@ -186,35 +186,54 @@ def predict():
 @app.route("/generate_pdf", methods=["POST"])
 def generate_pdf():
     try:
-        data = request.json
-        disease = data.get("disease", "Unknown")
-        precautions = data.get("precautions", [])
-        medications = data.get("medications", [])
-        diet = data.get("diet", [])
-        workout = data.get("workout", [])
+        data = request.get_json(force=True)
+
+        disease = str(data.get("disease", "Unknown"))
+
+        precautions = [str(x) for x in data.get("precautions", []) if x]
+        medications = [str(x) for x in data.get("medications", []) if x]
+        diet = [str(x) for x in data.get("diet", []) if x]
+        workout = [str(x) for x in data.get("workout", []) if x]
 
         filename = f"report_{int(datetime.now().timestamp())}.pdf"
         path = os.path.join(REPORT_DIR, filename)
 
         c = canvas.Canvas(path, pagesize=letter)
+        width, height = letter
+        y = height - 50
+
+        def new_page():
+            nonlocal y
+            c.showPage()
+            y = height - 50
+
         c.setFont("Helvetica-Bold", 16)
-        c.drawString(50, 750, "AI Medical Diagnosis Report")
+        c.drawString(50, y, "AI Medical Diagnosis Report")
+        y -= 30
 
         c.setFont("Helvetica", 12)
-        c.drawString(50, 720, f"Disease: {disease}")
-
-        y = 690
+        c.drawString(50, y, f"Disease: {disease}")
+        y -= 30
 
         def write_section(title, items):
             nonlocal y
+            if not items:
+                return
+
+            if y < 80:
+                new_page()
+
             c.setFont("Helvetica-Bold", 12)
             c.drawString(50, y, title)
             y -= 20
 
             c.setFont("Helvetica", 11)
             for item in items:
-                c.drawString(70, y, "- " + item)
+                if y < 60:
+                    new_page()
+                c.drawString(70, y, "- " + item[:120])
                 y -= 15
+
             y -= 10
 
         write_section("Precautions", precautions)
@@ -223,13 +242,14 @@ def generate_pdf():
         write_section("Workout / Lifestyle", workout)
 
         c.save()
-
-        # return filename so frontend can trigger download
         return jsonify({"file": filename})
 
     except Exception as e:
         print("PDF ERROR:", e)
-        return jsonify({"error": str(e)})
+        return jsonify({"error": "PDF generation failed"}), 500
+
+
+
 
 
 @app.route("/download/<filename>")
@@ -244,5 +264,5 @@ def shutdown_session(exception=None):
     db_session.remove()
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+     app.run(host="0.0.0.0", port=7860)
 
