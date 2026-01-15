@@ -1,9 +1,0 @@
-flask
-scikit-learn
-pandas
-numpy
-flask-cors
-sqlalchemy
-werkzeug
-reportlab
-requests

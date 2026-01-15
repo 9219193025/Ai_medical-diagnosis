@@ -23,6 +23,11 @@ app = Flask(
     template_folder="templates",
     static_folder="static"
 )
+app.config.update(
+    SESSION_COOKIE_SAMESITE="Lax",
+    SESSION_COOKIE_SECURE=False  # True only if HTTPS everywhere
+)
+
 
 app.secret_key = "super_secret_local_key"
 CORS(app)

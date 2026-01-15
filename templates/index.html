@@ -191,6 +191,7 @@
 
             const res = await fetch("/predict", {
                 method: "POST",
+                credentials: "include",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ symptoms })
             });
@@ -244,6 +245,7 @@
 
   const res = await fetch("/generate_pdf", {
     method: "POST",
+    credentials: "include",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(window.latestResult)
   });
