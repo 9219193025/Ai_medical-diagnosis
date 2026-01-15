@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 ---
 title: AI Medical Diagnosis
-emoji: 🩺
 colorFrom: blue
 colorTo: green
 sdk: docker
