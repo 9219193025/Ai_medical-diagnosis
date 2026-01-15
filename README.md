@@ -1,24 +1,29 @@
 <<<<<<< HEAD
 ---
-title: Ai Medical Diagnosis Backend
-emoji: 🚀
-colorFrom: gray
-colorTo: blue
+title: AI Medical Diagnosis
+emoji: 🩺
+colorFrom: blue
+colorTo: green
 sdk: docker
+app_file: app.py
 pinned: false
-license: mit
 ---
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
-=======
-## AI-Powered Medical Diagnosis System
+# AI-Powered Medical Diagnosis System
 
-• ML-based disease prediction using symptoms
-• Flask REST API deployed on Hugging Face
-• Model hosted separately to handle large artifacts
-• Secure authentication & session handling
-• Production-style deployment pipeline
+An AI-based web application that predicts diseases based on symptoms
+and provides precautions, medications, diet, and lifestyle advice.
 
-Tech:
-Python, Flask, scikit-learn, Hugging Face, REST APIs
->>>>>>> 7dc2b14b4b294d7b2b32c82e2d875d16e5062725
+## Features
+- User authentication
+- Symptom-based disease prediction
+- Medical recommendations
+- PDF report generation
+- History tracking
+
+## Tech Stack
+- Python
+- Flask
+- Machine Learning
+- Docker
+- Hugging Face Spaces
