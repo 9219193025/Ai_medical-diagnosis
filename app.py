@@ -143,7 +143,7 @@ def login_user():
         return "Invalid credentials!"
 
     session["user_id"] = user.id
-    return redirect(url_for("index"))
+    return jsonify({"token": str(user.id)})
 
 # -------------------------
 #   Prediction API
