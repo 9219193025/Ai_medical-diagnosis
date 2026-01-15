@@ -1,6 +1,7 @@
 import os, json, pickle,requests
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session, send_from_directory
 from flask_cors import CORS
+
 import numpy as np
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import init_db, SessionLocal, User, SessionHistory
@@ -23,14 +24,17 @@ app = Flask(
     template_folder="templates",
     static_folder="static"
 )
+app.secret_key = "super_secret_local_key"
 app.config.update(
-    SESSION_COOKIE_SAMESITE="Lax",
-    SESSION_COOKIE_SECURE=False  # True only if HTTPS everywhere
+    SESSION_COOKIE_SAMESITE="None",
+    SESSION_COOKIE_SECURE=True
 )
 
 
-app.secret_key = "super_secret_local_key"
-CORS(app)
+
+
+CORS(app, supports_credentials=True)
+
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_DIR = os.path.join(BASE_DIR, "model")
